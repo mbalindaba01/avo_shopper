@@ -1,9 +1,10 @@
 {
   "name": "avo-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "It’s avocado season and there are special offers everywhere. Help your friends to keep track of finding the cheapest avos by creating a little web app using the supplied Factory Function in `avo-shopper.js`.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "keywords": [],
@@ -16,5 +17,17 @@
     "mocha": "^9.1.3",
     "pg": "^8.7.1",
     "save-dev": "0.0.1-security"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbalindaba01/avo_shopper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mbalindaba01/avo_shopper/issues"
+  },
+  "homepage": "https://github.com/mbalindaba01/avo_shopper#readme"
 }
