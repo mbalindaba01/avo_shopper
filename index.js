@@ -13,7 +13,10 @@ const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:Mine
 
 const pool = new Pool({
 	connectionString,
-	rejectUnautorized: false
+	ssl: {
+		rejectUnauthorized: false
+	  }
+	
 });
 
 const Avos = avos(pool)
