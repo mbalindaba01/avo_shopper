@@ -12,7 +12,8 @@ const PORT =  process.env.PORT || 3019;
 const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:Minenhle!28@localhost:5432/avo_shopper';
 
 const pool = new Pool({
-	connectionString
+	connectionString,
+	rejectUnautorized: false
 });
 
 const Avos = avos(pool)
