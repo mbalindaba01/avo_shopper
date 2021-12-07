@@ -1,11 +1,11 @@
 module.exports = function(pool) {
 
 	async function createShop(shopName) {
-		const result = await pool.query(`insert into shop (name) values ($1) returning id`, [shopName]);
-		if (result.rowCount === 1) {
-			return result.rows[0].id;
-		}
-		return null;
+		pool.query('insert into shop (name) values ($1)', [shopName]);
+		// if (result.rowCount === 1) {
+		// 	return result.rows[0].id;
+		// }
+		// return null;
 	}
 
 	async function listShops() {
@@ -39,7 +39,6 @@ module.exports = function(pool) {
 			select name, price, qty, round((price/qty), 2) as unit_price from avo_deal 
 			join shop on shop.id = avo_deal.shop_id 
 			where price <= $1 order by unit_price asc`, [amount]);
-
 		return result.rows;
 	}
 

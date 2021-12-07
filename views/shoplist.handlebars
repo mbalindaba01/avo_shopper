@@ -1,5 +1,18 @@
-<form id="shops" action="/shops" method="get">
+{{!-- <form id="list" action="/list/:language" method="get">
+     {{!-- {{#each list}}
+        <a href="/shops/{{name}}" name="deal" value="Haibo">{{name}}</a>
+     {{/each}} --}}
+     {{!-- <input type="radio" name="language" id="zulu" value="Zulu">
+     <button type="submit">Submit</button> --}}
+{{!-- </form> --}}
+
+<div class="list">
     {{#each list}}
-     <li>{{name}}</li>
-    {{/each}}
+        <a href="/shops/{{id}}">{{name}}</a>
+     {{/each}}
+</div>
+
+<form action="/addShop" method="post">
+   <input type="text" name="shop" id="shop" placeholder="Shop Name" required>
+   <button type="submit">Add Shop</button>
 </form>

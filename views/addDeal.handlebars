@@ -1,0 +1,10 @@
+<form action="" method="post">
+    <select name="shop_name" id="shop">
+        {{#each list}}
+            <option name="shop" value="{{id}}" required>{{name}}</option>
+        {{/each}}
+    </select>
+    <input type="text" name="qty" id="qty" placeholder="Quantity" required>
+    <input type="text" name="price" id="price" placeholder="Price" required>
+    <button type="submit">Add Deal</button>
+</form>

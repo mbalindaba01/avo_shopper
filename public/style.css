@@ -1,23 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Shadows Into Light&display=swap');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #0c7c59;
+	color: #eee;
+	font-family: 'Poppins', sans-serif;
+	width: 100%;
+	height: 100%;
+	padding: 0 20px;
+}
+
+section.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div.text {
+	width: 60%;
+}
+
+div.text p {
+	font-size: 28px;
+	text-align: center;
+}
+
+div.picture {
+	width: 40%;
+}
+
+img {
+	width: 100%;
+}
+
+h2 {
+	padding: 20px;
+	text-decoration: underline;
+}
+
+section.deals {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+section.forms {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+button {
+	padding: 10px;
+	width: 100px;
+	border: none;
+	background: #001213;
+	color: #eee;
+}
+
+form#amount {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+	padding: 10px;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+div.list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+div.list a {
+	text-decoration: none;
+	border: 1px solid #001213;
+	background: #001213;
+	color: #eee;
+	width: 200px;
+	margin: 10px 0;
+}
+
+
+
+
+/* 
+
 body {
 	background-color: #0c7c59;
 	color: whitesmoke;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+	height: 100%;
 
-header {
-	background: red;
-	width: 100%;
-}
-
-div.logo {
-	position: absolute;
-	top: 5px;
-}
-
-nav {
-	width: 50%;
-	float: right;
-}
 
 ul {
 	display: flex;
@@ -33,7 +119,11 @@ section.main {
 	position: relative;
 	top: 100px;
 	display: flex;
-	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	width: 100vw;
 	height: 40vh;
 }
 
@@ -42,6 +132,14 @@ section.main > * {
 	justify-content: center;
 	align-items: center;
 	width: 50%;
+}
+
+section.deals {
+	position: relative;
+	width: 100%;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
 }
 
 img {
@@ -57,6 +155,36 @@ div.text p {
 	font-size: 40px;
 }
 
-form#shops {
+div.list {
 	margin-top: 100px;
 }
+
+div.deals {
+	margin-top: 100px;
+}
+
+select {
+	margin-top: 100px;
+}
+
+a.deals {
+	display: block;
+	text-decoration: none;
+	color: #eee;
+	padding: 10px 0;
+}
+
+form#shops {
+	position: absolute; 
+	right: 10px;
+	top: 0;
+	margin-top: -150px;
+}
+
+form#shops button {
+	padding: 10px;
+	width: 100px;
+	border: none;
+	background: #001213;
+	color: #eee;
+} */

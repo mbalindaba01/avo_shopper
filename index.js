@@ -32,9 +32,10 @@ app.set('view engine', 'handlebars');
 
 let counter = 0;
 
-app.get('/', function(req, res) {
+app.get('/', async function(req, res) {
+	let topFiveDeals = await Avos.topFiveDeals()
 	res.render('index', {
-		counter
+		deals: topFiveDeals
 	});
 });
 
@@ -43,6 +44,34 @@ app.post('/shops', async function (req, res){
 	res.render('shoplist', {
 		list: shopList
 	})
+})
+
+app.post('/amount', async function (req, res){
+	let maxPrice = parseFloat(req.body.amount)
+	let recommendedDeals = await Avos.recommendDeals(maxPrice)
+	res.render('index', {
+		deals: recommendedDeals
+	})
+})
+
+app.get('/shops/:id', async function(req, res){
+	let shopDeals = await Avos.dealsForShop(req.params.id)
+	res.render('deals', {
+		deals: shopDeals
+	})
+})
+
+app.post('/addDeal', async function(req, res){
+	let shopList = await Avos.listShops()
+	Avos.createDeal(req.body.shop_name, req.body.qty, req.body.price)
+	res.render('addDeal', {
+		list: shopList
+	})
+})
+
+app.post('/addShop', async function(req, res){
+	Avos.createShop(req.body.shop)
+	res.redirect('/')
 })
 
 // start  the server and start listening for HTTP request on the PORT number specified...

@@ -1,0 +1,9 @@
+<div class="deals">
+    {{#each deals}}
+        <p>{{qty}} for {{price}}</p>
+    {{/each}}
+</div>
+
+<form action="/addDeal" method="post">
+   <button type="submit">Add Deal</button>
+</form>

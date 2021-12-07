@@ -1,21 +1,32 @@
-<header>
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li>Shop List</li>
-        </ul>
-    </nav>
-</header>
 <body>
     <section class="main">
         <div class="text">
             <p>Get your avocado with the lowest price you can with these deals </p>
-            <form action="shops" method="post">
-                <button type="submit" name="shops" id="shops">All Shops</button>
-            </form>
         </div>
         <div class="picture">
             <img src="avocado.jpg" alt="Hands holding an avocado cut open">
         </div>
     </section>
+    <section class="deals">
+        <h2>Check out these top deals to save</h2>
+        {{#each deals}}
+            <p>{{qty}} for R{{price}} at {{name}}</p>
+        {{/each}}
+    </section>
+    <section class="forms">
+        <form action="shops" method="post" id="shops">
+            <button type="submit" name="shops" id="shops">All Shops</button>
+        </form>
+        <form action="/amount" method="post" id="amount">
+            <h2>Let's show you deals you can afford</h2>
+            <input type="text" name="amount" id="amount" placeholder="How much do you have?">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="deals">
+            {{#each deals}}
+                <p>R{{price}} for {{qty}} at {{name}} (R{{unit_price}} for a single avocado!)</p>
+            {{/each}}
+        </div>
+    </section>
+    
 </body>
